@@ -1,0 +1,24 @@
+{
+  "source_sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a",
+  "cohort": "Loan_defaulted exactly 0 or 1 after trimming",
+  "segments": [
+    {
+      "income": "50K–250K",
+      "known_customers": 6407,
+      "defaults": 826,
+      "default_rate": 0.12892149211799594
+    },
+    {
+      "income": "<50K",
+      "known_customers": 40,
+      "defaults": 10,
+      "default_rate": 0.25
+    },
+    {
+      "income": ">250K",
+      "known_customers": 3551,
+      "defaults": 225,
+      "default_rate": 0.06336243311743171
+    }
+  ]
+}

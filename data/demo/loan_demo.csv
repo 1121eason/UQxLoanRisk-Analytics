@@ -1,0 +1,13 @@
+Customer_id,Age,Work_class,Loan_amount,Education,Years_of_education,Marital_status,Occupation,Race,Gender,State,Capital_gain,Capital_loss,Weekly_work_hours,Country/area_of_origin,Income,Current_mortgage,Student_debt,Number_of_homes_owned,Bank_balance,Loan_purpose,Credit_history,Past_bankruptcy,Loan_defaulted
+DEMO-001,39,Private,11000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,1,0,5100,Demo purpose,5,0,0
+DEMO-002,39,Private,12000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,0,0,5200,Demo purpose,5,0,0
+DEMO-003,39,?,13000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,1,0,5300,Demo purpose,5,0,1
+DEMO-004,,Private,14000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,0,0,5400,Demo purpose,5,0,0
+DEMO-005,39,Private,15000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,1,0,5500,Demo purpose,5,0,0
+DEMO-006,39,?,16000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,0,0,5600,Demo purpose,5,0,1
+DEMO-007,39,Private,17000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,1,0,5700,Demo purpose,5,0,0
+DEMO-008,,Private,18000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,0,0,5800,Demo purpose,5,0,0
+DEMO-009,39,?,19000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,1,0,5900,Demo purpose,5,0,
+DEMO-010,39,Private,20000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,0,0,6000,Demo purpose,5,0,
+DEMO-011,39,Private,21000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,1,1,0,6100,Demo purpose,5,0,
+DEMO-012,,?,22000,Bachelors,13,Never-married,Analyst,Demo group,Demo gender,QLD,0,0,40,0,Demo middle income,0,0,0,6200,Demo purpose,5,0,0+BAD

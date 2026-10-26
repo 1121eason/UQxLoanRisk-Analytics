@@ -1,0 +1,6 @@
+* text=auto
+*.rmp -text
+*.csv -text
+*.dax text eol=lf
+*.pq text eol=lf
+*.svg text eol=lf

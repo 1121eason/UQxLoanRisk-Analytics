@@ -1,0 +1,16 @@
+{
+  "pbix_sha256": "84cef546485a5587768d1a53dfef833a51d37d21308b2e265eb5e8d036c34bd7",
+  "row_count": 14999,
+  "unique_customer_ids": 14999,
+  "outcomes": {
+    "Fully Paid": 8937,
+    "Unknown": 5001,
+    "Default": 1061
+  },
+  "income_sort_counts": {
+    "99": 10457,
+    "3": 4502,
+    "1": 40
+  },
+  "note": "Read-only decode of stored column values, not DAX execution or Power BI UI validation. The Power Query source filename differs from the separately supplied CSV."
+}

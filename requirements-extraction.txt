@@ -1,0 +1,2 @@
+# Optional; not needed for the public audit, tests or CI.
+pbixray==0.15.5

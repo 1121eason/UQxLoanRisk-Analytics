@@ -1,0 +1,812 @@
+{
+  "source_sha256": "84cef546485a5587768d1a53dfef833a51d37d21308b2e265eb5e8d036c34bd7",
+  "extractor": "pbixray==0.15.5 + Python zipfile/json",
+  "measure_count": 12,
+  "calculated_column_count": 13,
+  "pages": [
+    {
+      "name": "Customer Profile",
+      "width": 1280,
+      "height": 720,
+      "types": {
+        "textbox": 3,
+        "card": 3,
+        "lineClusteredColumnComboChart": 1,
+        "hundredPercentStackedBarChart": 1,
+        "clusteredBarChart": 2,
+        "actionButton": 1,
+        "pivotTable": 1,
+        "slicer": 4,
+        "image": 5,
+        "shape": 10
+      },
+      "visuals": [
+        {
+          "type": "textbox",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 149.53912729895413,
+            "y": 12.484673638658489,
+            "width": 754.1694915254237,
+            "height": 53.69491525423729
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Known_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 120.21276595744682,
+            "y": 96.80851063829788,
+            "width": 253.19148936170214,
+            "height": 78.72340425531915
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Default_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 556.3829787234043,
+            "y": 97.87234042553192,
+            "width": 212.76595744680853,
+            "height": 80.85106382978724
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 973.404255319149,
+            "y": 96.80851063829788,
+            "width": 212.76595744680853,
+            "height": 81.91489361702128
+          }
+        },
+        {
+          "type": "lineClusteredColumnComboChart",
+          "title": "Default Risk by Age Band",
+          "fields": {
+            "Y": [
+              "Loan.Known_Customers"
+            ],
+            "Y2": [
+              "Loan.Default_Rate"
+            ],
+            "Tooltips": [
+              "Loan.Default_Customers",
+              "Loan.Risk_Ratio",
+              "Loan.Known_Customers"
+            ],
+            "Category": [
+              "Loan.Age_Band"
+            ]
+          },
+          "bounds": {
+            "x": 437.2340425531915,
+            "y": 280.8510638297872,
+            "width": 386.17021276595744,
+            "height": 207.4468085106383
+          }
+        },
+        {
+          "type": "hundredPercentStackedBarChart",
+          "title": "Loan Outcome Composition by Education Level",
+          "fields": {
+            "Series": [
+              "Loan.Loan_Outcome"
+            ],
+            "Tooltips": [
+              "Loan.Default_Customers",
+              "Loan.Default_Rate",
+              "Loan.Known_Customers",
+              "Loan.Risk_Ratio"
+            ],
+            "Category": [
+              "Loan.Education_Group"
+            ],
+            "Y": [
+              "Loan.Total_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 35.1063829787234,
+            "y": 280.8510638297872,
+            "width": 367.0212765957447,
+            "height": 207.4468085106383
+          }
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": "Default Rate by Marital Status",
+          "fields": {
+            "Category": [
+              "Loan.Marital_status"
+            ],
+            "Y": [
+              "Loan.Default_Rate"
+            ],
+            "Tooltips": [
+              "Loan.Known_Customers",
+              "Loan.Default_Customers",
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 39.361702127659576,
+            "y": 508.5106382978724,
+            "width": 567.0212765957447,
+            "height": 203.19148936170214
+          }
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": null,
+          "fields": {
+            "Category": [
+              "Loan.Occupation"
+            ],
+            "Y": [
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 662.7659574468086,
+            "y": 507.44680851063833,
+            "width": 577.6595744680851,
+            "height": 204.2553191489362
+          }
+        },
+        {
+          "type": "actionButton",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 40
+          }
+        },
+        {
+          "type": "pivotTable",
+          "title": "Default Rate Heatmap by Work Class and Gender",
+          "fields": {
+            "Rows": [
+              "Loan.Work_class"
+            ],
+            "Columns": [
+              "Loan.Gender"
+            ],
+            "Values": [
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 858.5106382978723,
+            "y": 277.6595744680851,
+            "width": 381.9148936170213,
+            "height": 211.70212765957447
+          }
+        },
+        {
+          "type": "slicer",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.State"
+            ]
+          },
+          "bounds": {
+            "x": 188.29787234042556,
+            "y": 196.8085106382979,
+            "width": 259.5744680851064,
+            "height": 59.57446808510639
+          }
+        },
+        {
+          "type": "slicer",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Work_class"
+            ]
+          },
+          "bounds": {
+            "x": 451.06382978723406,
+            "y": 196.8085106382979,
+            "width": 259.5744680851064,
+            "height": 59.57446808510639
+          }
+        },
+        {
+          "type": "slicer",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Education_Group"
+            ]
+          },
+          "bounds": {
+            "x": 713.8297872340426,
+            "y": 196.8085106382979,
+            "width": 259.5744680851064,
+            "height": 60.63829787234043
+          }
+        },
+        {
+          "type": "slicer",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Gender"
+            ]
+          },
+          "bounds": {
+            "x": 975.5319148936171,
+            "y": 196.8085106382979,
+            "width": 260,
+            "height": 60.63829787234043
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 25.531914893617024,
+            "y": 12.765957446808512,
+            "width": 118.08510638297874,
+            "height": 79.7872340425532
+          }
+        },
+        {
+          "type": "textbox",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 153.20014424810668,
+            "y": 60.07789397764152,
+            "width": 695.5932203389831,
+            "height": 32.94915254237288
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.864406779661017,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 435.66101694915255,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 851.7966101694916,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.74173712528824,
+            "y": 185.94926979246733,
+            "width": 1243.597232897771,
+            "height": 79.69254419677172
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.97911227154047,
+            "y": 498.17232375979114,
+            "width": 612.8459530026109,
+            "height": 221.8276762402089
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 640.1044386422976,
+            "y": 498.17232375979114,
+            "width": 619.4255874673629,
+            "height": 221.8276762402089
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.957446808510639,
+            "y": 265.95744680851067,
+            "width": 403.19148936170217,
+            "height": 231.91489361702128
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 419.1489361702128,
+            "y": 265.95744680851067,
+            "width": 420.21276595744683,
+            "height": 231.91489361702128
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 839.3617021276597,
+            "y": 265.95744680851067,
+            "width": 420.21276595744683,
+            "height": 231.91489361702128
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 65.95744680851064,
+            "y": 109.57446808510639,
+            "width": 73.40425531914894,
+            "height": 62.765957446808514
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 505.3191489361702,
+            "y": 110.57446914464549,
+            "width": 72.3404255319149,
+            "height": 64.8936170212766
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 940.4255319148933,
+            "y": 93.61702127659575,
+            "width": 65.95744680851064,
+            "height": 87.2340425531915
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 39.361702127659576,
+            "y": 107.4468085106383,
+            "width": 56.38297872340426,
+            "height": 58.51063829787234
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 42.5531914893617,
+            "y": 208.51063829787236,
+            "width": 42.5531914893617,
+            "height": 45.74468085106383
+          }
+        },
+        {
+          "type": "textbox",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 77.65957446808511,
+            "y": 208.51063829787236,
+            "width": 77.65957446808511,
+            "height": 38.297872340425535
+          }
+        }
+      ]
+    },
+    {
+      "name": "Financial and Credit Risk",
+      "width": 1280,
+      "height": 720,
+      "types": {
+        "textbox": 2,
+        "lineClusteredColumnComboChart": 1,
+        "columnChart": 1,
+        "pivotTable": 1,
+        "actionButton": 1,
+        "image": 4,
+        "shape": 9,
+        "clusteredBarChart": 1,
+        "card": 3,
+        "hundredPercentStackedBarChart": 1
+      },
+      "visuals": [
+        {
+          "type": "textbox",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 149.53912729895413,
+            "y": 12.484673638658489,
+            "width": 754.1694915254237,
+            "height": 53.69491525423729
+          }
+        },
+        {
+          "type": "lineClusteredColumnComboChart",
+          "title": "Customer Distribution and Default Rate by Loan Amount Band",
+          "fields": {
+            "Category": [
+              "Loan.Loan_Amount_Band"
+            ],
+            "Tooltips": [
+              "Loan.Default_Customers"
+            ],
+            "Y": [
+              "Loan.Default_Rate"
+            ],
+            "Y2": [
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 667.1235347159603,
+            "y": 188.13345356176734,
+            "width": 572.4797114517584,
+            "height": 168.512173128945
+          }
+        },
+        {
+          "type": "columnChart",
+          "title": "Default Rate by Income Level",
+          "fields": {
+            "Category": [
+              "Loan.Income"
+            ],
+            "Y": [
+              "Loan.Default_Rate"
+            ],
+            "Tooltips": [
+              "Loan.Known_Customers",
+              "Loan.Default_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 45.01352569882777,
+            "y": 191.59603246167717,
+            "width": 570.1713255184851,
+            "height": 163.89540126239854
+          }
+        },
+        {
+          "type": "pivotTable",
+          "title": "Default Rate by Income and Bankruptcy History",
+          "fields": {
+            "Rows": [
+              "Loan.Income"
+            ],
+            "Values": [
+              "Loan.Default_Rate"
+            ],
+            "Columns": [
+              "Loan.Bankruptcy_Status"
+            ]
+          },
+          "bounds": {
+            "x": 35.7799819657349,
+            "y": 370.49594229035165,
+            "width": 1199.2064923354374,
+            "height": 140.81154192966636
+          }
+        },
+        {
+          "type": "actionButton",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 100,
+            "height": 40
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 25.531914893617024,
+            "y": 12.765957446808512,
+            "width": 118.08510638297874,
+            "height": 79.7872340425532
+          }
+        },
+        {
+          "type": "textbox",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 153.20014424810668,
+            "y": 60.07789397764152,
+            "width": 695.5932203389831,
+            "height": 32.94915254237288
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.004508566275923,
+            "y": 515.9242560865645,
+            "width": 612.8764652840397,
+            "height": 204.29215509467988
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 39.361702127659576,
+            "y": 107.4468085106383,
+            "width": 56.38297872340426,
+            "height": 58.51063829787234
+          }
+        },
+        {
+          "type": "clusteredBarChart",
+          "title": "Default Rate by Loan Purpose",
+          "fields": {
+            "Category": [
+              "Loan.Loan_purpose"
+            ],
+            "Y": [
+              "Loan.Default_Rate_Min_Sample"
+            ],
+            "Tooltips": [
+              "Loan.Known_Customers",
+              "Loan.Default_Customers",
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 672.8944995491433,
+            "y": 526.3119927862939,
+            "width": 574.7880973850315,
+            "height": 184.6708746618575
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 65.95744680851064,
+            "y": 109.57446808510639,
+            "width": 73.40425531914894,
+            "height": 62.765957446808514
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Known_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 120.21276595744682,
+            "y": 96.80851063829788,
+            "width": 253.19148936170214,
+            "height": 78.72340425531915
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 505.3191489361702,
+            "y": 110.57446914464549,
+            "width": 72.3404255319149,
+            "height": 64.8936170212766
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Default_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 556.2469135802469,
+            "y": 96.92181069958848,
+            "width": 212.80658436213992,
+            "height": 81.11934156378601
+          }
+        },
+        {
+          "type": "image",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 940.4255319148933,
+            "y": 93.61702127659575,
+            "width": 65.95744680851064,
+            "height": 87.2340425531915
+          }
+        },
+        {
+          "type": "card",
+          "title": null,
+          "fields": {
+            "Values": [
+              "Loan.Default_Rate"
+            ]
+          },
+          "bounds": {
+            "x": 973.4320987654321,
+            "y": 95.86831275720165,
+            "width": 212.80658436213992,
+            "height": 82.17283950617283
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 851.7966101694916,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 435.66101694915255,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 15.864406779661017,
+            "y": 87.86440677966102,
+            "width": 407.5932203389831,
+            "height": 97.6271186440678
+          }
+        },
+        {
+          "type": "hundredPercentStackedBarChart",
+          "title": "Loan Outcome Composition by Bankruptcy History",
+          "fields": {
+            "Category": [
+              "Loan.Bankruptcy_Status"
+            ],
+            "Series": [
+              "Loan.Loan_Outcome"
+            ],
+            "Tooltips": [
+              "Loan.Default_Rate",
+              "Loan.Default_Customers",
+              "Loan.Known_Customers"
+            ],
+            "Y": [
+              "Loan.Outcome_Customers"
+            ]
+          },
+          "bounds": {
+            "x": 38.08836789900811,
+            "y": 526.3119927862939,
+            "width": 567.8629395852118,
+            "height": 185.82506762849414
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 646.3480613165013,
+            "y": 515.9242560865645,
+            "width": 612.8764652840397,
+            "height": 204.29215509467988
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 23.08385933273219,
+            "y": 181.20829576194768,
+            "width": 612.8764652840397,
+            "height": 184.6708746618575
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 16.158701532912534,
+            "y": 362.41659152389536,
+            "width": 1243.0658250676283,
+            "height": 156.97024346257888
+          }
+        },
+        {
+          "type": "shape",
+          "title": null,
+          "fields": {},
+          "bounds": {
+            "x": 646.3480613165013,
+            "y": 180.05410279531108,
+            "width": 612.8764652840397,
+            "height": 184.6708746618575
+          }
+        }
+      ]
+    }
+  ]
+}

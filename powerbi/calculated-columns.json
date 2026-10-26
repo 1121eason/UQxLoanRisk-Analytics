@@ -1,0 +1,67 @@
+[
+  {
+    "TableName": "Loan",
+    "ColumnName": "Loan_Outcome",
+    "Expression": "\nVAR v = TRIM('Loan'[Loan_defaulted] & \"\")\nRETURN\nSWITCH(\n    TRUE(),\n    v = \"1\", \"Default\",\n    v = \"0\", \"Fully Paid\",\n    \"Unknown\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Age_Band",
+    "Expression": "\nVAR age_text = TRIM('Loan'[Age] & \"\")\nVAR age_value =\n    IFERROR(\n        VALUE(age_text),\n        BLANK()\n    )\nRETURN\nSWITCH(\n    TRUE(),\n    ISBLANK(age_value), \"Unknown\",\n    age_value < 25, \"Under 25\",\n    age_value < 35, \"25–34\",\n    age_value < 45, \"35–44\",\n    age_value < 55, \"45–54\",\n    age_value < 65, \"55–64\",\n    \"65+\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Age_Band_Sort",
+    "Expression": "\nVAR age_text = TRIM('Loan'[Age] & \"\")\nVAR age_value =\n    IFERROR(\n        VALUE(age_text),\n        BLANK()\n    )\nRETURN\nSWITCH(\n    TRUE(),\n    ISBLANK(age_value), 99,\n    age_value < 25, 1,\n    age_value < 35, 2,\n    age_value < 45, 3,\n    age_value < 55, 4,\n    age_value < 65, 5,\n    6\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Education_Group",
+    "Expression": "\nVAR edu = TRIM('Loan'[Education] & \"\")\nRETURN\nSWITCH(\n    TRUE(),\n    edu IN {\n        \"Preschool\", \"1st-4th\", \"5th-6th\", \"7th-8th\",\n        \"9th\", \"10th\", \"11th\", \"12th\"\n    }, \"Below High School\",\n\n    edu = \"HS-grad\", \"High School\",\n\n    edu IN {\n        \"Some-college\", \"Assoc-voc\", \"Assoc-acdm\"\n    }, \"Some College / Associate\",\n\n    edu = \"Bachelors\", \"Bachelor\",\n\n    edu IN {\n        \"Masters\", \"Doctorate\", \"Prof-school\"\n    }, \"Postgraduate / Professional\",\n\n    \"Unknown\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Education_Group_Sort",
+    "Expression": "\nVAR edu = TRIM('Loan'[Education] & \"\")\nRETURN\nSWITCH(\n    TRUE(),\n    edu IN {\n        \"Preschool\", \"1st-4th\", \"5th-6th\", \"7th-8th\",\n        \"9th\", \"10th\", \"11th\", \"12th\"\n    }, 1,\n\n    edu = \"HS-grad\", 2,\n\n    edu IN {\n        \"Some-college\", \"Assoc-voc\", \"Assoc-acdm\"\n    }, 3,\n\n    edu = \"Bachelors\", 4,\n\n    edu IN {\n        \"Masters\", \"Doctorate\", \"Prof-school\"\n    }, 5,\n\n    99\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Loan_Amount_Band",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Loan_amount]), \"Unknown\",\n    'Loan'[Loan_amount] <= 65095718, \"Q1 Low loan\",\n    'Loan'[Loan_amount] <= 128784620, \"Q2 Mid-low loan\",\n    'Loan'[Loan_amount] <= 219005352, \"Q3 Mid-high loan\",\n    \"Q4 High loan\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Loan_Amount_Sort",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Loan_amount]), 99,\n    'Loan'[Loan_amount] <= 65095718, 1,\n    'Loan'[Loan_amount] <= 128784620, 2,\n    'Loan'[Loan_amount] <= 219005352, 3,\n    4\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Bank_Balance_Band",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Bank_balance]), \"Unknown\",\n    'Loan'[Bank_balance] <= 5781.54, \"Q1 Lowest balance\",\n    'Loan'[Bank_balance] <= 9883.62, \"Q2 Low-mid balance\",\n    'Loan'[Bank_balance] <= 13994.19, \"Q3 Mid-high balance\",\n    \"Q4 Highest balance\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Bank_Balance_Sort",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Bank_balance]), 99,\n    'Loan'[Bank_balance] <= 5781.54, 1,\n    'Loan'[Bank_balance] <= 9883.62, 2,\n    'Loan'[Bank_balance] <= 13994.19, 3,\n    4\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Credit_History_Band",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Credit_history]), \"Unknown\",\n    'Loan'[Credit_history] < 5, \"<5 years\",\n    'Loan'[Credit_history] < 10, \"5-10 years\",\n    'Loan'[Credit_history] < 15, \"10-15 years\",\n    'Loan'[Credit_history] < 20, \"15-20 years\",\n    \"20+ years\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Credit_History_Sort",
+    "Expression": "\nSWITCH(\n    TRUE(),\n    ISBLANK('Loan'[Credit_history]), 99,\n    'Loan'[Credit_history] < 5, 1,\n    'Loan'[Credit_history] < 10, 2,\n    'Loan'[Credit_history] < 15, 3,\n    'Loan'[Credit_history] < 20, 4,\n    5\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Bankruptcy_Status",
+    "Expression": "\nIF(\n    'Loan'[Past_bankruptcy] > 0,\n    \"Previous bankruptcy\",\n    \"No previous bankruptcy\"\n)"
+  },
+  {
+    "TableName": "Loan",
+    "ColumnName": "Overall_Default_Rate_Fixed",
+    "Expression": "\nCALCULATE(\n    [Default_Rate],\n    REMOVEFILTERS('Loan'[Income]),\n    REMOVEFILTERS('Loan'[Loan_purpose]),\n    REMOVEFILTERS('Loan'[Loan_Amount_Band]),\n    REMOVEFILTERS('Loan'[Bankruptcy_Status])\n)"
+  }
+]

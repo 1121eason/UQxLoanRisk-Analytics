@@ -1,0 +1,67 @@
+{
+  "inspected_on": "2026-10-26",
+  "inputs": [
+    {
+      "source_file": "A2.pbix",
+      "bytes": 4138154,
+      "sha256": "84cef546485a5587768d1a53dfef833a51d37d21308b2e265eb5e8d036c34bd7",
+      "public_copy": null,
+      "row_data": true
+    },
+    {
+      "source_file": "s4972258_powerbi.pbix.pbix",
+      "bytes": 4138154,
+      "sha256": "84cef546485a5587768d1a53dfef833a51d37d21308b2e265eb5e8d036c34bd7",
+      "public_copy": null,
+      "row_data": true
+    },
+    {
+      "source_file": "A2.rmp",
+      "bytes": 23496,
+      "sha256": "5fd65c16bcc8bb830c6dcd6d389d71846bbfa34af2b23e0fa0bf039cac9ecd6e",
+      "public_copy": "rapidminer/archive/loan-default-alternative.rmp",
+      "row_data": false
+    },
+    {
+      "source_file": "s4972258_rapidminer.rmp",
+      "bytes": 20333,
+      "sha256": "7e0aa847c40ab9cf651573f397d46eb2b889f873fb185cfca13a43af2c833ea9",
+      "public_copy": "rapidminer/loan-default-original.rmp",
+      "row_data": false
+    },
+    {
+      "source_file": "BISM7233_A2_data_dictionary.docx",
+      "bytes": 17673,
+      "sha256": "b4c9c2e5df64df66bbe298c199308d8f11587a79ed69d69ab27232e13330ddc8",
+      "public_copy": null,
+      "row_data": false
+    },
+    {
+      "source_file": "BISM7233_Business_Analytics_Case_Study.docx",
+      "bytes": 4507597,
+      "sha256": "8d021e100e29e5c5793b95c8f7f3259b3cb77a0972415ca8bf230cf2574f2bfc",
+      "public_copy": null,
+      "row_data": false
+    },
+    {
+      "source_file": "BISM7233_A2_Loan_Data_Set_2026S1.csv",
+      "bytes": 2291082,
+      "sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a",
+      "public_copy": null,
+      "row_data": true
+    },
+    {
+      "source_file": "Business_Analytics_Case_Project_Rubric.pdf",
+      "bytes": 126048,
+      "sha256": "09f565619a28c4e40179481014200700e2338a42e9a898b40000df0379acab3c",
+      "public_copy": null,
+      "row_data": false
+    }
+  ],
+  "notes": [
+    "PBIX inputs have identical SHA-256 hashes.",
+    "Zone.Identifier files are download metadata and are excluded.",
+    "No final report or model performance outputs were supplied.",
+    "Source CSV, PBIX and course documents are retained only in ignored private/source/."
+  ]
+}

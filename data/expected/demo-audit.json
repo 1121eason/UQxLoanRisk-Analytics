@@ -1,0 +1,31 @@
+{
+  "total_rows": 12,
+  "columns": 24,
+  "valid_label_rows": 8,
+  "fully_paid_rows": 6,
+  "default_rows": 2,
+  "missing_label_rows": 3,
+  "invalid_label_rows": 1,
+  "default_rate_known": 0.25,
+  "majority_class_accuracy": 0.75,
+  "empty_customer_ids": 0,
+  "duplicate_customer_id_excess_rows": 0,
+  "missing_values": {
+    "Age": {
+      "blank": 3,
+      "question_mark": 0
+    },
+    "Work_class": {
+      "blank": 0,
+      "question_mark": 4
+    },
+    "Loan_defaulted": {
+      "blank": 3,
+      "question_mark": 0
+    }
+  },
+  "mortgage_student_debt_equal_rows": 6,
+  "rate_definition": "Loan_defaulted = 1 / rows with Loan_defaulted exactly 0 or 1 after trimming",
+  "source_sha256": "584ccecc1b68741aae66f5a338adce1f962a411e81b7fb479b9ce336a882aa44",
+  "decoded_as": "utf-8-sig"
+}

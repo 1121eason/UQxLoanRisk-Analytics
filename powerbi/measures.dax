@@ -1,0 +1,72 @@
+// Extracted measure definitions. Run as a DAX query against the Loan model.
+DEFINE
+    MEASURE 'Loan'[Total_Customers] = DISTINCTCOUNT('Loan'[Customer_id])
+
+    MEASURE 'Loan'[Known_Customers] = CALCULATE(
+    [Total_Customers],
+    'Loan'[Loan_Outcome] IN {"Default", "Fully Paid"}
+)
+
+    MEASURE 'Loan'[Default_Customers] = CALCULATE(
+    [Total_Customers],
+    'Loan'[Loan_Outcome] = "Default"
+)
+
+    MEASURE 'Loan'[Fully_Paid_Customers] = CALCULATE(
+    [Total_Customers],
+    'Loan'[Loan_Outcome] = "Fully Paid"
+)
+
+    MEASURE 'Loan'[Default_Rate] = DIVIDE(
+    [Default_Customers],
+    [Known_Customers]
+)
+
+    MEASURE 'Loan'[Risk_Ratio] = DIVIDE(
+    [Default_Rate],
+    CALCULATE(
+        [Default_Rate],
+        ALLSELECTED('Loan')
+    )
+)
+
+    MEASURE 'Loan'[Previous_Bankruptcy_Customers] = CALCULATE(
+    [Known_Customers],
+    'Loan'[Past_bankruptcy] > 0
+)
+
+    MEASURE 'Loan'[Previous Bankruptcy Rate] = DIVIDE(
+    [Previous_Bankruptcy_Customers],
+    [Known_Customers]
+)
+
+    MEASURE 'Loan'[Default_Rate_Min_Sample] = IF(
+    [Known_Customers] >= 100,
+    [Default_Rate],
+    BLANK()
+)
+
+    MEASURE 'Loan'[Outcome_Customers] = CALCULATE(
+    [Total_Customers],
+    KEEPFILTERS(
+        'Loan'[Loan_Outcome] IN {"Default", "Fully Paid"}
+    )
+)
+
+    MEASURE 'Loan'[Overall_Default_Rate_Fixed1] = CALCULATE(
+    [Default_Rate],
+    REMOVEFILTERS('Loan'[Income]),
+    REMOVEFILTERS('Loan'[Loan_purpose]),
+    REMOVEFILTERS('Loan'[Loan_Amount_Band]),
+    REMOVEFILTERS('Loan'[Bankruptcy_Status])
+)
+
+    MEASURE 'Loan'[Customer_Share] = DIVIDE(
+    [Known_Customers],
+    CALCULATE(
+        [Known_Customers],
+        ALLSELECTED('Loan'[Loan_Amount_Band])
+    )
+)
+
+EVALUATE ROW("Known customers", [Known_Customers], "Defaults", [Default_Customers], "Default rate", [Default_Rate])
