@@ -1,0 +1,89 @@
+{
+  "source_file": "s4972258_report.pdf",
+  "source_sha256": "8f4185ae1bb024d37f9e9befbadee4ecd4bec051511696fc38d637a95115abbc",
+  "source_pages": 15,
+  "extraction": "Selected embedded PNG images; no generative edits or PDF page text published",
+  "figures": [
+    {
+      "file": "customer-profile-dashboard.png",
+      "page": 3,
+      "page_image_index_zero_based": 1,
+      "caption": "Original customer profile dashboard",
+      "width": 1336,
+      "height": 758,
+      "sha256": "ff9f85a3fe6b519b7b5aa96c5c47e1eb90153a8134aef364b342634503297569"
+    },
+    {
+      "file": "financial-risk-dashboard.png",
+      "page": 4,
+      "page_image_index_zero_based": 1,
+      "caption": "Original financial and credit risk dashboard",
+      "width": 1379,
+      "height": 783,
+      "sha256": "1ec6395f163eddaa56d244540fb13634ebbd7649973f96a7682e2e264d862166"
+    },
+    {
+      "file": "rapidminer-overall-process.png",
+      "page": 7,
+      "page_image_index_zero_based": 1,
+      "caption": "Historical overall preprocessing and cross-validation process",
+      "width": 1061,
+      "height": 527,
+      "sha256": "9e4ac66b279fccd651b12f989e63ca8f987ce45757cddd8e32aa0d9142d96ff8"
+    },
+    {
+      "file": "random-forest-cv.png",
+      "page": 7,
+      "page_image_index_zero_based": 2,
+      "caption": "Random forest enabled within cross-validation",
+      "width": 1061,
+      "height": 527,
+      "sha256": "efb66ac906c74ab8bfcb9c75612b060c815c161c8ccadf9b54351b4a0da05b2e"
+    },
+    {
+      "file": "logistic-regression-cv.png",
+      "page": 8,
+      "page_image_index_zero_based": 2,
+      "caption": "Logistic regression enabled within cross-validation",
+      "width": 1061,
+      "height": 527,
+      "sha256": "4dd6ad7f68fb9b77101c73425f5318871c420abc6d194e97ee22844e24bdce39"
+    },
+    {
+      "file": "forest-tree-example.png",
+      "page": 9,
+      "page_image_index_zero_based": 1,
+      "caption": "Reported tree view; not global forest feature importance",
+      "width": 985,
+      "height": 443,
+      "sha256": "fbb21457f81eddc426fd0b065819ae0eb5159aba49098fe26b03cc0431aad610"
+    },
+    {
+      "file": "logistic-coefficients-excerpt.png",
+      "page": 9,
+      "page_image_index_zero_based": 2,
+      "caption": "Partial logistic-regression coefficient table",
+      "width": 1381,
+      "height": 780,
+      "sha256": "dc3b158b8efaa97b0a4d7fadfd063694e2388b60b91d32deab963a75ad4bcc33"
+    },
+    {
+      "file": "random-forest-confusion-matrix.png",
+      "page": 11,
+      "page_image_index_zero_based": 1,
+      "caption": "Random forest historical confusion matrix",
+      "width": 1252,
+      "height": 186,
+      "sha256": "6808e52747d617b90974d14ec7b0d8af5893239e9c5e59a0187fbc11378f38f0"
+    },
+    {
+      "file": "logistic-regression-confusion-matrix.png",
+      "page": 11,
+      "page_image_index_zero_based": 2,
+      "caption": "Logistic regression historical confusion matrix",
+      "width": 1250,
+      "height": 176,
+      "sha256": "4d16f83ce55d548a564e30e041a80382351724d34eb77553e8904b5e0c1e358a"
+    }
+  ]
+}

@@ -1,2 +1,5 @@
 # Optional; not needed for the public audit, tests or CI.
 pbixray==0.15.5
+
+# Optional report-figure extraction.
+pypdf==6.10.0

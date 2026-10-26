@@ -9,13 +9,25 @@ The local PBIX contains one `Loan` table, two 1280 × 720 report pages, 12 measu
 | Customer Profile | Age combo chart, education composition, marital-status bars, occupation bars, work-class/gender matrix | Three KPI cards, four slicers and one action button |
 | Financial and Credit Risk | Loan-amount combo chart, income columns, income/bankruptcy matrix, loan-purpose bars, bankruptcy composition | Three KPI cards and one action button |
 
+## Original dashboard screenshots
+
+These are original embedded screenshots extracted from pages 3 and 4 of the actual assignment report. They contain aggregate analysis, not borrower-level records. Their source and checksums are in the [figure manifest](../evidence/figures/manifest.json).
+
+![Original Customer Profile dashboard](../evidence/figures/customer-profile-dashboard.png)
+
+![Original Financial and Credit Risk dashboard](../evidence/figures/financial-risk-dashboard.png)
+
+The screenshots show 9,998 known outcomes, 1,061 defaults and a rounded 10.6% rate. Those values reconcile to the local CSV and stored PBIX. They also show the income-order issue and the loan-amount visual's two rate series identified in the offline review. These are historical views; the portfolio update does not execute slicers or refresh the native report.
+
+## Metadata design maps
+
 The maps below preserve saved positions and bindings for analytical visuals, cards and slicers. They omit decoration and do not execute Power BI rendering or reproduce displayed values.
 
 ![Customer Profile metadata design map](../assets/customer-profile-map.svg)
 
 ![Financial and Credit Risk metadata design map](../assets/financial-risk-map.svg)
 
-Source: [`report-metadata.json`](../powerbi/report-metadata.json). Page counts exclude decorative text, shapes and images. The original PBIX contains decorative image resources with AI-related filenames; this portfolio does not claim the assessment's manual-visual requirement was independently verified.
+Source: [`report-metadata.json`](../powerbi/report-metadata.json). Page counts exclude decorative text, shapes and images. These diagrams supplement the original report screenshots above.
 
 ## Metric design
 
@@ -46,7 +58,7 @@ The original M query promotes headers, sets types and creates `Income_Sort`. The
 | Education composition uses `Total_Customers` | The stacked-bar Y binding is distinct from the financial page's `Outcome_Customers` | Check whether unknown outcomes belong in the composition and align denominator labels |
 | Source path names a different CSV variant | The original M path ends in a `RowData-2.csv.csv` variant | Reconcile aggregates and transformation history before claiming complete record-level equivalence |
 
-The stored model has 14,999 unique IDs, 8,937 fully paid outcomes, 1,061 defaults and 5,001 unknown outcomes. These reconcile to the separately supplied CSV's outcome counts. No record-level equivalence, successful refresh, slicer interaction or DAX-engine execution is claimed by this offline review.
+The stored model has 14,999 unique IDs, 8,937 fully paid outcomes, 1,061 defaults and 5,001 unknown outcomes. These reconcile to the separately supplied CSV's outcome counts and the report screenshots. Record-level equivalence, a fresh refresh, interactive testing and DAX-engine execution remain outside this offline review.
 
 ## Re-extract the logic
 

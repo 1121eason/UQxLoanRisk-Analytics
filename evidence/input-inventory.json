@@ -56,12 +56,28 @@
       "sha256": "09f565619a28c4e40179481014200700e2338a42e9a898b40000df0379acab3c",
       "public_copy": null,
       "row_data": false
+    },
+    {
+      "source_file": "1.pdf",
+      "bytes": 1200206,
+      "sha256": "ec9fef0832fd93356b7ddcec7db13fa725b2a0e0ec5c0f494eb35e555a9b759b",
+      "public_copy": null,
+      "row_data": false,
+      "pages": 16
+    },
+    {
+      "source_file": "s4972258_report.pdf",
+      "bytes": 1563341,
+      "sha256": "8f4185ae1bb024d37f9e9befbadee4ecd4bec051511696fc38d637a95115abbc",
+      "public_copy": null,
+      "row_data": false,
+      "pages": 15
     }
   ],
   "notes": [
     "PBIX inputs have identical SHA-256 hashes.",
     "Zone.Identifier files are download metadata and are excluded.",
-    "No final report or model performance outputs were supplied.",
-    "Source CSV, PBIX and course documents are retained only in ignored private/source/."
+    "Source CSV, PBIX and course documents are retained only in ignored private/source/.",
+    "Two completed reports supplied in a later review; the 15-page student-named PDF is the main figure source, and 1.pdf is a 16-page alternate. Original PDFs remain local."
   ]
 }

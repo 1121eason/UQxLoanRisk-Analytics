@@ -9,6 +9,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 
 from audit_data import audit, read_csv
+from audit_model_results import reconcile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -71,9 +72,19 @@ def main() -> None:
     for item in inventory["inputs"]:
         if item["public_copy"]:
             require(hashlib.sha256((ROOT / item["public_copy"]).read_bytes()).hexdigest() == item["sha256"], "Original workflow checksum differs")
+    reported = json.loads((ROOT / "evidence/reported-model-results.json").read_text())
+    comparison = json.loads((ROOT / "analysis/model-comparison.json").read_text())
+    require(reconcile(reported, source) == comparison, "Reported model audit differs from recomputed metrics")
+    figures = json.loads((ROOT / "evidence/figures/manifest.json").read_text())
+    require(figures["source_sha256"] == reported["source_report_sha256"], "Report figure source hash differs")
+    report_input = next(i for i in inventory["inputs"] if i["source_file"] == figures["source_file"])
+    require(report_input["sha256"] == figures["source_sha256"], "Report inventory hash differs")
+    for figure in figures["figures"]:
+        path = ROOT / "evidence/figures" / figure["file"]
+        require(hashlib.sha256(path.read_bytes()).hexdigest() == figure["sha256"], "Original screenshot checksum differs")
     for path in (ROOT / "assets").glob("*.svg"):
         ET.parse(path)
-    print(f"Verified {len(files)} public files: links, publication boundary, cohort reconciliation, original XML and synthetic expected output.")
+    print(f"Verified {len(files)} public files: links, publication boundary, cohort/model reconciliation, screenshot hashes and synthetic expected output.")
 
 
 if __name__ == "__main__":

@@ -47,7 +47,7 @@ def overview():
         content += rect(x, 441, 265, 75, "#e7eef6", "#e7eef6")
         content += text(x + 16, 468, name, 18, weight=700)
         content += text(x + 16, 493, detail, 14, "#536c83")
-    content += text(40, 541, "Academic case / Aggregate audit results / No model performance claim", 13, "#536c83")
+    content += text(40, 541, "Academic case / Original dashboard and model screenshots / Reconciled aggregate results", 13, "#536c83")
     (ASSETS / "project-overview.svg").write_text(svg(1200, 560, content, "Loan default analytics overview"))
 
 
@@ -106,9 +106,31 @@ def income_chart():
     (ASSETS / "income-comparison.svg").write_text(svg(1200, 390, content, "Observed income-category default rates and sample sizes"))
 
 
+def model_chart():
+    comparison = json.loads((ROOT / "analysis/model-comparison.json").read_text())
+    content = rect(0, 0, 1200, 490, "#f3f6fa", "#f3f6fa", 0)
+    content += text(40, 42, "Historical model comparison", 27, weight=700)
+    content += text(40, 73, "Recomputed from report confusion matrices / 9,998 evaluated outcomes / Default is the positive class", 16, "#536c83")
+    content += rect(40, 94, 14, 14, "#157f82", "#157f82", 2) + text(64, 107, "Random Forest", 15, "#157f82", 700)
+    content += rect(250, 94, 14, 14, "#426bc1", "#426bc1", 2) + text(274, 107, "Logistic Regression", 15, "#426bc1", 700)
+    for metric_index, (key, label) in enumerate([("accuracy", "Accuracy"), ("precision", "Default precision"), ("recall", "Default recall")]):
+        y = 137 + metric_index * 98
+        content += text(40, y + 25, label, 18, weight=700)
+        for model_index, model in enumerate(comparison["models"]):
+            yy = y + model_index * 34
+            color = "#157f82" if model_index == 0 else "#426bc1"
+            content += rect(260, yy, 720, 24, "#e1e9f0", "#e1e9f0", 3)
+            content += rect(260, yy, round(model["recomputed"][key] * 720, 2), 24, color, color, 3)
+            content += text(1005, yy + 19, f'{model["recomputed"][key]:.2%}', 20, color, 700)
+    content += text(40, 443, "Accuracy baseline: 89.39% by predicting every case as fully paid, with zero default recall.", 15, "#536c83")
+    content += text(40, 471, "Historical cross-validation evidence. Models were not rerun; costs, calibration and a final holdout remain unverified.", 13, "#536c83")
+    (ASSETS / "model-comparison.svg").write_text(svg(1200, 490, content, "Reported random forest and logistic regression performance comparison"))
+
+
 if __name__ == "__main__":
     ASSETS.mkdir(exist_ok=True)
     overview()
     maps()
     income_chart()
-    print("Rendered four SVG figures from committed aggregate results and metadata.")
+    model_chart()
+    print("Rendered five SVG figures from committed aggregate results and metadata.")

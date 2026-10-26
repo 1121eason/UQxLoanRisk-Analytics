@@ -38,6 +38,14 @@ The middle-income group has a higher observed default proportion than the highes
 
 These are proposed investigations. They are not evidence that changing a borrower characteristic changes risk, that a bank should decline a segment, or that the model produces a financial gain.
 
+## Model choice and review workload
+
+The actual report prefers Random Forest over Logistic Regression for its lower false-positive burden. Its confusion matrix implies 1,314 flagged cases, with 367 defaults detected and 947 fully paid cases flagged. Logistic Regression implies 7,000 flagged cases, with 885 defaults detected and 6,115 fully paid cases flagged. The counts describe historical predictions, not measured staff workload or a future approval policy.
+
+This comparison connects modelling to review capacity: fewer flags reduce the number of cases a reviewer would inspect, while lower recall leaves more defaults undetected. The report's preferred candidate still misses 694 defaults and has lower accuracy than the all-fully-paid baseline. Without loss exposures, review costs, calibrated probabilities and independent validation, the evidence cannot select a profitable threshold. [Metric reconciliation and original matrices](model-results.md).
+
+The report also discusses affordability, credit history and financial distress as factors for further investigation. The financial dashboard actually shown covers income, loan amount, purpose and bankruptcy. Strong claims about credit-history effects or global feature importance require additional model output beyond the partial figures supplied.
+
 ## Responsible use
 
 The original model includes race, gender and country/area of origin among dummy-coded attributes. A future candidate should document why each feature is available and appropriate, compare versions with and without sensitive predictors, and evaluate subgroup errors and calibration. Removing a sensitive column alone does not establish fairness because other fields can act as proxies. No fairness result is claimed here.

@@ -6,15 +6,16 @@ Use Python 3.10 or newer. The audit and tests need only the standard library:
 
 ```bash
 python scripts/audit_data.py data/demo/loan_demo.csv --output output/demo-audit.json
+python scripts/audit_model_results.py --output output/model-comparison.json
 python -m unittest discover -s tests -v
 python scripts/verify_repository.py
 ```
 
-The 12-row example is artificial. `data/expected/demo-audit.json` records its expected result. It exercises label handling, missing markers and ID checks; it does not train or evaluate a classifier. GitHub Actions runs this same public path.
+The 12-row example is artificial. `data/expected/demo-audit.json` records its expected result. It exercises label handling, missing markers and ID checks. The model audit separately recomputes historical report metrics from transcribed aggregate matrices. Neither command trains a classifier. GitHub Actions runs this same public path.
 
 ## Local original files
 
-The original CSV, PBIX files, two RMP inputs, case brief, dictionary and rubric are retained under ignored `private/source/` in the author's local checkout. They are absent after cloning the public repository. There is no public data-download step. Obtain authorised source materials independently before using the native paths.
+The original CSV, PBIX files, two RMP inputs, case brief, dictionary, rubric and two completed PDFs are retained under ignored `private/source/` in the author's local checkout. They are absent after cloning the public repository. Selected aggregate screenshots are published separately. Obtain authorised source materials independently before using the native paths.
 
 To check an authorised case CSV:
 
@@ -58,3 +59,13 @@ python scripts/reconcile_pbix.py /path/to/local-report.pbix --output output/pbix
 ```
 
 This uses [PBIXRay](https://github.com/Hugoberry/pbixray) 0.15.5. The script exports expressions and visual metadata only, replacing the original file path with `CsvPath`. It does not refresh a model, evaluate DAX, render a dashboard or export table records. This optional dependency is not required by CI or the synthetic demo.
+
+## Optional report screenshot extraction
+
+The optional requirements also include the `pypdf` version used for extraction:
+
+```bash
+python scripts/extract_report_evidence.py /path/to/authorised-report.pdf --output output/report-figures
+```
+
+The extractor requires the SHA-256 of the reviewed 15-page report and selects nine specific embedded PNG images. It publishes no full PDF pages, university header images, assignment instructions or customer records. Different report editions require a new visual review and selection map. The complete source PDFs remain unchanged locally.

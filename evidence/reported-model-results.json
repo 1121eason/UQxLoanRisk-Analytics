@@ -1,0 +1,59 @@
+{
+  "source_file": "s4972258_report.pdf",
+  "source_report_sha256": "8f4185ae1bb024d37f9e9befbadee4ecd4bec051511696fc38d637a95115abbc",
+  "page": 11,
+  "transcription": "Counts visually checked in the two original confusion-matrix screenshots; model attribution follows report text on pages 1 and 11.",
+  "matrix_orientation": "Rows predicted false/true; columns actual false/true",
+  "models": [
+    {
+      "name": "Random Forest",
+      "confusion_matrix": {
+        "tn": 7990,
+        "fp": 947,
+        "fn": 694,
+        "tp": 367
+      },
+      "reported_micro_percent": {
+        "accuracy": 83.59,
+        "precision": 27.93,
+        "recall": 34.59
+      },
+      "reported_fold_mean_percent": {
+        "accuracy": 83.59,
+        "precision": 27.94,
+        "recall": 34.59
+      },
+      "reported_fold_spread_percentage_points": {
+        "accuracy": 0.82,
+        "precision": 2.6,
+        "recall": 4.22
+      },
+      "report_figure": "evidence/figures/random-forest-confusion-matrix.png"
+    },
+    {
+      "name": "Logistic Regression",
+      "confusion_matrix": {
+        "tn": 2822,
+        "fp": 6115,
+        "fn": 176,
+        "tp": 885
+      },
+      "reported_micro_percent": {
+        "accuracy": 37.08,
+        "precision": 12.64,
+        "recall": 83.41
+      },
+      "reported_fold_mean_percent": {
+        "accuracy": 37.08,
+        "precision": 12.67,
+        "recall": 83.42
+      },
+      "reported_fold_spread_percentage_points": {
+        "accuracy": 4.25,
+        "precision": 0.6,
+        "recall": 3.56
+      },
+      "report_figure": "evidence/figures/logistic-regression-confusion-matrix.png"
+    }
+  ]
+}

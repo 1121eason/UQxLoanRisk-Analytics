@@ -16,5 +16,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce the synthetic audit
         run: python scripts/audit_data.py data/demo/loan_demo.csv --output output/demo-audit.json
+      - name: Reconcile historical model results
+        run: python scripts/audit_model_results.py --output output/model-comparison.json
       - name: Check committed evidence and public-file boundary
         run: python scripts/verify_repository.py
